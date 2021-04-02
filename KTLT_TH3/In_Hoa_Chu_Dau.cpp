@@ -1,3 +1,4 @@
+/*Chuyen ki tu dau thanh in hoa con lai in thuong*/
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
