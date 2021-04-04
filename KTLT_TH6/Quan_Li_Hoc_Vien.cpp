@@ -1,11 +1,11 @@
+/*Quan li hoc vien*/
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <conio.h>
 #define MAX 100
 typedef struct{
     char name[30];
-    char birthday[8];
+    char birthday[15];
     char birthplace[40];
     int P_WIN;
     int P_WORD;
@@ -46,27 +46,28 @@ void Input (Trainee A[], int n){
     for (int i = 1 ; i <= n ; i++) {
         printf("\n-----------------------------------------\n");
         printf("Enter the detail of %d trainee....",i);
-        fflush(stdin);
         printf("\nEnter surname:" );
+        fflush(stdin);
         gets(A[i].surname);
-        fflush(stdin);
         printf("Enter name: ");
+        fflush(stdin);
         gets(A[i].name);
-        fflush(stdin);
         printf("Enter birthday: ");
-        gets(A[i].birthday);
         fflush(stdin);
+        gets(A[i].birthday);
         printf("Enter birthdayplace: ");
+        fflush(stdin);
         gets(A[i].birthplace);
     }
 }
 /*In danh sach*/
 void DisplayingInformation (Trainee A[], int n){
-    printf("STT           \tHO VA TEN       NGAY SINH     NOI SINH\tGHI CHU\n");
-    for ( int i = 1 ; i <= n ; i++){
-        printf("%-3d %15s %-10s  %-8s      %-20s\n",i,A[i].surname,A[i].name,A[i].birthday,A[i].birthplace);
+    printf("%3s%25s%20s%20s\n","STT","HO VA TEN","NGAY SINH","NOI SINH");
+    for (int i = 1; i <= n ; i++){
+        printf("%-3d%20s %-9s%16s%20s\n",i,A[i].surname,A[i].name,A[i].birthday,A[i].birthplace);
     }
 }
+/*In ket qua cua cac hoc vien*/
 void DisplayingScore (Trainee A[], int n){
     total(A,n);
     printf("\n%3s%25s%13s%10s\n","STT","HO VA TEN","TONG","XEP LOAI");
