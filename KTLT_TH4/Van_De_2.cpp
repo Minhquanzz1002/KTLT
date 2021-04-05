@@ -20,6 +20,7 @@ void areaTriangle (point p[]){
     else
         printf("\nBa diem thang hang!!!Don't be such an ass!!!");
 }
+
 int main(){
     point p[MAX];
     int n;
