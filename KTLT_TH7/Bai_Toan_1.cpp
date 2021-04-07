@@ -17,7 +17,7 @@ int main(){
     scanf("%d",&n);
     input(a,n);
     output(a,n);
-    total(a,n);
+    //total(a,n);
     ghiFiletxt(a,n);
     GhiFileNhiPhan(a,n);
     DocFileNhiPhan(b,m);
@@ -84,7 +84,8 @@ void DocFileNhiPhan (int b[], int m){
     }
     fclose(fp);
     printf("\nDoc file thanh cong!!!");
-    //XuatFile(b,m);
+    XuatFile(b,m);
+    total(b,m);
 }
 /*Xuat du lieu doc duoc trong file*/
 void XuatFile (int b[], int m){
