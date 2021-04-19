@@ -5,6 +5,7 @@ void input (int a[], int n);
 void output (int a[], int n);
 int Max (int a[], int n);
 int Min (int a[], int n);
+int SumArr (int a[], int n);
 int main(){
     int a[100], n;
     printf("Nhap n: ");
@@ -14,6 +15,7 @@ int main(){
     output(a,n);
     printf("\nGia tri lon nhat la: %d",Max(a,n));
     printf("\nGia tri lon nhat la: %d",Min(a,n));
+    printf("\nTong mang: %d",SumArr(a,n));
 }
 /*Tim gia tri lon nhat*/
 int Max (int a[], int n){
@@ -37,6 +39,11 @@ int Min (int a[], int n){
         else
             return Min(a,n-1);
     }
+}
+int SumArr (int a[], int n){
+    if (n==1)
+        return a[1];
+    return SumArr(a,n-1)+a[n];
 }
 /*Nhap mang*/
 void input (int a[], int n){
