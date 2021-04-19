@@ -5,8 +5,7 @@ int capSoCong (int a, int n, int r)     /*a so hang dau tien*/
         return a;
     return capSoCong(a,n-1,r)+r;
 }
-int main()
-{
+int main(){
     int a, n, r;
     printf("Nhap so hang dau tien, n , cong sai: ");
     scanf("%d%d%d",&a,&n,&r);
