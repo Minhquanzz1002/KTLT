@@ -33,7 +33,7 @@ int count (char a[], int n){
         return 0;
     else{
         if (a[n] == 'a'){
-            return count(a,n-1) +1;
+            return count(a,n-1) +1;6
         }
     }
     return count(a,n-1);
