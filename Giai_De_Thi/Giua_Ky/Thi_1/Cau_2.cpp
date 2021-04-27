@@ -52,6 +52,7 @@ int main(){
         }
     }
 }
+/*Nhap thong tin nhim*/
 void input (Hedgehog HedArr[], int &n){
     printf("Nhap so loai nhim: ");
     scanf("%d",&n);
@@ -69,6 +70,7 @@ void input (Hedgehog HedArr[], int &n){
         scanf("%d",&HedArr[i].Quantity);
     }
 }
+/*In danh sach nhim*/
 void output (Hedgehog HedArr[], int n){
     printf("\n-------------DS NHIM--------------\n");
     printf("\n%3s %8s %15s %15s %15s","STT","Ma nhim","Ten loai nhim","Don gia(ngan)","So luong");
@@ -76,6 +78,7 @@ void output (Hedgehog HedArr[], int n){
         printf("\n%3d %8s %15s %15ld %15d",i+1,HedArr[i].HedID,HedArr[i].HedSpe,HedArr[i].Price,HedArr[i].Quantity);
     }
 }
+/*Tim gia thap nhat*/
 long tim_Gia_Thap_Nhat (Hedgehog HedArr[], int n){
     long giaThapNhat = HedArr[0].Price;
     for (int i = 1; i < n;i++){
@@ -84,6 +87,7 @@ long tim_Gia_Thap_Nhat (Hedgehog HedArr[], int n){
     }
     return giaThapNhat;
 }
+/*In ra man hinh nhim co gia thap nhat*/
 void output_min (Hedgehog HedArr[], int n){
     printf("\n----------DS NHIM GIA RE NHAT------------\n");
     long giaThap = tim_Gia_Thap_Nhat(HedArr,n);
