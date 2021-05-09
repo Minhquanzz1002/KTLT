@@ -1,1 +1,0 @@
-fgets(str,sizeof(str),stdin);
