@@ -26,72 +26,106 @@ void countElement(int *p, int n);
 
 void checkTangGiam(int *p, int n);
 
+void ghepHaiMang(int *p, int &n, int *q, int m);
+
 int main(){
     int a[MAX], n = 0;
     int *p = &a[0];
+    int b[MAX], m;
+    int *q = &b[0];
     int key;
     bool check = false;
     while(check == false){
         system("cls");
         printf("\n1.Nhap mang\n2.Xuat mang\n3.Tong mang\n4.Sap xep tang\n5.Them vao cuoi mang\n6.Tim phan tu trong mang");
-        printf("\n7.Xoa phan tu\n8.Them vao vi tri nhap tu ban phim\n9.Dem so lan xuat hien gia tri\n10.Kiem tra mang tang hay giam\n0.Thoat\n");
+        printf("\n7.Xoa phan tu\n8.Them vao vi tri nhap tu ban phim\n9.Dem so lan xuat hien gia tri\n10.Kiem tra mang tang hay giam");
+        printf("\n11.Nhap mang 2\n12.Ghep 2 mang\n13.In mang 2");
+        printf("\n0.Thoat\n");
         scanf("%d",&key);
         switch(key){
             case 1:
                 input(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 2:
                 checkArr(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 3:
                 checkArr(p,n);
                 sumArray(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 4:
                 checkArr(p,n);
                 sortUp(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 5:
                 checkArr(p,n);
                 addElement(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 6:
                 checkArr(p,n);
                 findElement(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 7:
                 checkArr(p,n);
                 delElement(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 8:
                 checkArr(p,n);
                 addElementInPos(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 9:
                 checkArr(p,n);
                 countElement(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 10:
                 checkArr(p,n);
                 checkTangGiam(p,n);
                 output(p,n);
+                printf("\nPress any to continue!!!");
+                getch();
+                break;
+            case 11:
+                input(q,m);
+                printf("\nPress any to continue!!!");
+                getch();
+                break;
+            case 12:
+                checkArr(p,n);
+                checkArr(q,m);
+                ghepHaiMang(p,n,q,m);
+                printf("\nPress any to continue!!!");
+                getch();
+                break;
+            case 13:
+                checkArr(q,m);
+                output(q,m);
+                printf("\nPress any to continue!!!");
                 getch();
                 break;
             case 0:
@@ -123,6 +157,7 @@ void output(int *p, int n){
 /*Kiem tra da nhap mang chua*/
 void checkArr(int *p, int &n){
     if (n == 0){
+        printf("\nMang chua ton tai");
         input(p,n);
     }
 }
@@ -236,5 +271,13 @@ void checkTangGiam(int *p, int n){
     if (countGiam != n-1 && countTang != n-1){
         printf("\nMang khong tang khong giam");
     }
+}
+/*Ham ghep 2 mang thanh 1 mang*/
+void ghepHaiMang(int *p, int &n, int *q, int m){
+    for(int i = n,j = 0; i < m + n; i++, j++){
+        *(p+i) = *(q+j);
+    }
+    n = m + n;
+    printf("\nGhep 2 mang thanh cong");
 }
 /*XONG*/

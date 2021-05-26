@@ -1,66 +1,75 @@
 #include <stdio.h>
-#define MAX 100
+#include <stdlib.h>
+#include <string.h>
 typedef struct{
     char name[30];
     int age;
     int salary;     /*Tien luong*/
 } NV;
-void Input (NV nv1[], int n);
-void nhapFile(NV nv1[], int n);
-void docFile(NV nv2[], int n);
+void input (NV nv1[], int &n);
+void ghiFile (NV nv1[], int n);
+void docFile (NV nv1[], int &n);
+void output(NV nv2[], int n);
 int main(){
-    NV nv1[MAX], nv2[MAX];
+    NV nv2[50], nv1[50];
     int n, m;
-    printf("How many staff: ");
-    scanf("%d",&n);
-    nhapFile(nv1,n);
+    input(nv2,n);
+    output(nv2,n);
+    ghiFile(nv2,n);
+    docFile(nv1,m);
+    output(nv1,m);
 }
 /*Nhap thong tin nhan vien*/
-void Input (NV nv1[], int n){
-    for (int i = 1; i<= n ; i++){
+void input (NV nv1[], int &n){
+    for (n = 1; ;n++){
+        #define nv nv1[n]
         printf("\n------------------------------\n");
-        printf("Enter information for staff %d: ",i);
+        printf("Enter information for staff %d: ",n);
         printf("\nEnter name: ");
         fflush(stdin);
-        gets(nv1[i].name);
+        gets(nv.name);
+        if (strlen(nv.name) == 0){
+            n -= 1;
+            return;
+        }
         printf("Enter age: ");
-        scanf("%d",&nv1[i].age);
+        scanf("%d",&nv.age);
         printf("Enter salary: ");
-        scanf("%d",&nv1[i].salary);
+        scanf("%d",&nv.salary);
     }
 }
-/*Nhap vao file*/
-void nhapFile (NV nv1[], int n){
+
+void ghiFile (NV nv1[], int n){
     FILE *fp;
-    fp = fopen("C:\\Users\\DELL\\Desktop\\baitap2.bin","wb");
+    fp = fopen("D:\\D\\Document\\KTLT_KH2_2021\\File_Code\\INPUT.bin","wb");
     if (fp == NULL){
-        printf("Khong the mo file");
-        exit(0);
+        printf("\nCannot open file!!!");
     }
     fwrite(&n,sizeof(int),1,fp);
-    for (int i = 1;  ; i++){
-        printf("\n------------------------------\n");
-        printf("Enter information for staff %d: ",i);
-        printf("\nEnter name: ");
-        fflush(stdin);
-        gets(nv1[i].name);
-        printf("Enter age: ");
-        scanf("%d",&nv1[i].age);
-        printf("Enter salary: ");
-        scanf("%d",&nv1[i].salary);
-        fwrite(&nv1[i],sizeof(nv1),1,fp);
+    for (int i = 1; i<= n; i++){
+        fwrite(&nv1[i],sizeof(int),1,fp);
+    }
+    fclose(fp);
+    printf("\nLuu thong tin thanh cong");
+}
+void docFile (NV nv1[], int &n){
+    FILE *fp;
+    fp = fopen("D:\\D\\Document\\KTLT_KH2_2021\\File_Code\\INPUT.bin","rb");
+    if (fp == NULL){
+        printf("\nCannot open file!!!");
+    }
+    fread(&n,sizeof(int),1,fp);
+    for (int i = 1; i<= n; i++){
+        fread(&nv1[i],sizeof(int),1,fp);
     }
     fclose(fp);
 }
-/*Doc file*/
-void docFile(NV nv2[], int m){
-    FILE *fp;
-    fp = fopen("C:\\Users\\DELL\\Desktop\\baitap2.bin","rb");
-    if (fp == NULL){
-        printf("khong the mo file!!!");
-        exit(0);
-    }
-    for (int i = 1; i<= m){
-        fread(&nv2[i],sizeof(nv2),1,fp);
+/*in thong thin nhan vien*/
+void output(NV nv1[] , int n){
+    printf("\n-----------Thong tin nhan vien----------------");
+    printf("\n%3s %20s %10s %10s","STT","HO TEN","TUOI","LUONG");
+    for (int i = 1; i<= n ;i++){
+        #define nv nv1[i]
+        printf("\n%3d %20s %10d %10d",i,nv.name,nv.age,nv.salary);
     }
 }

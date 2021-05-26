@@ -23,5 +23,5 @@ void enterMarks (Mark *mark){
 }
 void showMarks (Mark mark){
     printf("\n%20s|%20s|%20s","Mark math","Mark physics","Mark chemistry");
-    printf("\n%20.2f|%20.2f|%20.2f",mark.math,mark.physics,mark.chemistry);
+    printf("\n%20.2f|%10.2f|%10.2f",mark.math,mark.physics,mark.chemistry);
 }

@@ -1,0 +1,15 @@
+Họ và tên thí sinh ………………….…………………; MSSV: …………
+Đề bài: 
+Bài 1: (3 điểm)  Sử dụng con trỏ và cấp phát động để giải quyết bài toán sau:
+Nhập vào hai mảng các số nguyên và nối hai mảng thành một mảng được săp xếp tăng dần.
+Bài 2: (7 điểm) Một nhà thuốc quản lý THUỐC gồm: mã thuốc, tên thuốc , hạn sử dụng, đơn giá. Hãy thực hiện các công việc sau:
+1.(0.5  điểm) Định nghĩa môt kiểu cấu trúc để giải quyết bài toán trên.
+2.(1 điểm) Viết hàm nhập vào n loại thuốc. 
+3.(1 điểm) Viết hàm ghi danh sách thuốc vào tệp.
+4.(1 điểm) Viết hàm đọc danh sách thuốc từ tệp lưu vào một mảng. 
+5.(2 điểm) Tìm trong danh sách thuốc đọc được ở câu 4 các thuốc đã quá hạn sử dụng. Hiển thị dạng bảng gồm: STT, Mã thuốc, tên thuốc , đơn giá, hạn sử dụng,
+Biết rằng: 
+  	Thuốc quá hạn sử dụng nếu hạn sử dụng (han_sd) < ngày hiện tại (ngayht)
+6.(1 điểm) Viết hàm int main()thực hiện các hàm trên 
+7.(0.5  điểm) Coding style 
+ ------------------------- Hết ------------------------------

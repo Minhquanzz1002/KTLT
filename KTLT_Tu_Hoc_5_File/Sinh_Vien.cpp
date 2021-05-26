@@ -70,5 +70,6 @@ void Search (char *FileName){
 	}  	
 	else{  
 		printf("Tim khong thay sinh vien co ma %s",MSSV);  
-	} 
+	}
+     
 }

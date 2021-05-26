@@ -13,6 +13,7 @@ int main(){
     inDS(pdau);
     return 0;
 }
+/*Tao danh sach*/
 void taoDS (SoNguyen *&pdau){
     int repeat;
     SoNguyen *p = pdau;
@@ -46,3 +47,4 @@ void inDS (SoNguyen *&pdau){
         }
     }
 }
+/*XONG*/

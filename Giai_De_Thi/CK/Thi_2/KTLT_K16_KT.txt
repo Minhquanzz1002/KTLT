@@ -1,0 +1,48 @@
+ĐẠI HỌC CÔNG NGHIỆP TP.HCM				   KIỂM TRA THỰC HÀNH – 02
+KHOA CÔNG NGHỆ THÔNG TIN                		Học phần: Kỹ Thuật Lập Trình
+	      			                         Thời gian:  75 phút
+
+	Câu 1 (4.0đ) Hoàn thiện chương trình dưới đây và lưu file hoten_maSV_cau1.cpp
+#include <stdio.h>
+#define size 100
+void abc(int *a, int n);
+void xyz(int *a, int *n);
+int count(int *a, int n);
+int max(int *a, int n);
+int main()
+{	int a[size], n;
+	xyz(a, &n); /* Ghi chú 1: */
+	abc(a, n); /* Ghi chú 2: */
+	printf("\nDem = %d", count(a,n));
+	printf("\nLon nhat = %d", max(a,n));
+	return 0;
+}
+void abc(int *a, int n)
+{
+	printf("\nDanh sach: ");
+	for(int i=0; i<n; i++)printf("%d\t", *(a+i));
+	printf("\n\n");
+}
+void xyz(int *a, int *n)
+{
+	do{
+		printf("\nSo phan tu:");scanf("%d", n);
+	}while (*n<1||*n>size);
+	for(int i=0; i<*n; i++)
+{	
+printf("\na[%d]= ",i); scanf("%d", a+i);
+	}
+}
+int count(int *a, int n)
+{
+	/* Thực hiện yêu cầu 3) */
+}
+int max(int *a, int n)
+{
+	/* Thực hiện yêu cầu 4) */
+}
+Yêu cầu:
+1) Đọc hiểu chương trình và cho biết hàm xyz() thực hiện công việc gì? Ghi câu trả lời vào /* Ghi chú 1: */
+2) Đọc hiểu chương trình và cho biết hàm abc() thực hiện công việc gì? Ghi câu trả lời vào /* Ghi chú 2: */
+3) Hoàn thiện hàm count() để thực hiện đếm số lượng các phần tử chia hết cho 3 có trong dãy a.
+4) Hoàn thiện hàm max() để tìm phần tử lớn nhất của dãy a.
